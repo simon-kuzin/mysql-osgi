@@ -1,62 +1,9 @@
 # Changelog
-# https://dev.mysql.com/doc/relnotes/connector-j/8.0/en/
+# https://dev.mysql.com/doc/relnotes/connector-j/5.1/en/
 
-Version 8.0.15
+Version 5.1.47
 
-  - Fix for Bug#94051 (29261254), Not recommended default for 'allowLoadLocalInfile'.
-
-Version 8.0.14
-
-  - WL#12298, Connectors: Expose metadata about source and binaries in unified way.
-
-  - Fix for Bug#93111 (28894344), ConnectionUrl.java contains char U+00A7 (section sign).
-
-  - WL#12621, DevAPI: Handling of Default Schema.
-
-  - Fix for Bug#93340 (28970166), C/J BUILD SCRIPT IS TOO VERBOSE
-
-  - WL#12462, DevAPI: Be prepared for initial notice on connection.
-
-  - Fix for Bug#28924137, WL#12463:IF COLLECTION DOESN'T EXIST, COLL.COUNT() IS GIVING A WRONG ERROR MESSAGE.
-
-  - WL#12463, DevAPI: Standardize count method.
-
-  - Fix for Bug#92508 (28747636), mysql-connector in bootclasspath causing memory leak.
-
-  - Fix for Bug#25650514, UPDATEROW() CALL FAILS WITH NPE WHEN SSPS=TRUE AND TABLE HAS MULTI-FLD KEY.
-
-  - Fix for Bug#25650482, REFRESHROW() CALL AFTER UPDATEROW() API FAILS WHEN USESERVERPREPSTMTS=TRUE.
-
-  - Fix for Bug#92536 (28692243), UPDATEING SERVER SIDE PREPSTMTS RESULTSET FAIL.
-
-  - Fix for Bug#92625 (28731795), CONTRIBUTION: FIX OBSERVED NPE IN CLEARINPUTSTREAM.
-    Thanks to Henning Schmiedehausen for his contribution.
-
-  - Fix for Bug#23045642, ADDING NO-DOC (MYSQLCONNJ-696) RESULTS IN EXCEPTION.
-
-  - Fix for Bug#91065 (28101003), ZERODATETIMEBEHAVIOR=CONVERT_TO_NULL SHOULD NOT APPLY TO 00:00:00 TIME COLUMNS.
-
-  - Fix for Bug#92574 (28706219), WHEN CONVERTING FROM VARCHAR TO JAVA BOOLEAN, 'N' IS NOT SUPPORTED.
-
-  - Fix for Bug#25642226, CHANGEUSER() NOT SETTING THE DATABASE PROPERLY WITH SHA USER.
-
-  - Fix for Bug#28606708, NAMED PIPE CONNECTION FOR X PROTOCOL RETURNS NPE, EXPECTED PROPER ERROR MESSAGE.
-
-Version 8.0.13
-
-  - Fix for Bug#91317 (28207422), Wrong defaults on collation mappings.
-
-  - WL#12245, DevAPI: Implement connect timeout.
-
-  - Fix for Bug#21774249, UNIT TEST FAILS WITH ERROR " 'CEST' IS UNRECOGNIZED TIME ZONE".
-
-  - WL#11857, DevAPI: Implement connection pooling for xprotocol.
-
-  - Fix for Bug#91873 (28444461), REMOVE USEOLDUTF8BEHAVIOR CONNECTION PROPERTY.
-
-  - Fix for Bug#92264 (28594434), JSONPARSER PUTS UNNECESSARY MAXIMUM LIMIT ON JSONNUMBER TO 10 DIGITS.
-
-  - WL#12110, Extend PropertyDefinitions.PropertyKey usage.
+  - Fix for Bug#28449601, MASTER : UNITTEST FOR BUG#22305979 (TESTBUG22305979) STILL FAILS ON QA SETUP.
 
   - Fix for Bug#81063 (23098159), w/ rewriteBatchedStatements, when 2 tables involved, the rewriting not correct.
 
@@ -71,62 +18,15 @@ Version 8.0.13
 
   - Fix for Bug#89948 (27658489), Batched statements are not committed for useLocalTransactionState=true.
 
+  - Fix for BUG#80532 (22847443), ENCODING OF RESULTSET.UPDATEROW IS BROKEN FOR NON ASCII CHARCTERS.
+
   - Fix for BUG#22305979, WRONG RECORD UPDATED IF SENDFRACTIONALSECONDS=FALSE AND SMT IS SCROLLABLE.
 
-  - Fix for Bug#27102307, CHANGE USESSL AND VERIFYSERVERCERTIFICATE TO SSLMODE OPTION.
-
-  - Fix for Bug#28150662, CONNECTOR/J 8 MALFORMED DATABASE URL EXCEPTION WHIT CORRECT URL STRING.
-
-  - Fix for Bug#91421 (28246270), ALLOWED VALUES FOR ZERODATETIMEBEHAVIOR ARE INCOMPATIBLE WITH NETBEANS.
-
-  - Fix for Bug#23045604, XSESSION.GETURI() RETURNS NPE.
-
-  - Fix for Bug#21914769, NPE WHEN TRY TO EXECUTE INVALID JSON STRING.
-
-  - Fix for Bug#BUG#90887 (28034570), DATABASEMETADATAUSINGINFOSCHEMA#GETTABLES FAILS IF METHOD ARGUMENTS ARE NULL.
-
-  - Fix for Bug#28207088, C/JAVA: UPDATECLOB(INT COLUMNLABEL, JAVA.SQL.CLOB CLOB) IS FAILING.
-
-  - Fix for Bug#27629553, NPE FROM GETSESSION() FOR SSL CONNECTION WHEN NO PASSWORD PASSED.
-
-Version 8.0.12
-
-  - Fix for Bug#28208000, MASTER : HANG IN ASYNCHRONOUS SELECT TEST.
-
-  - WL#10544, Update MySQL 8.0 keywords list.
-
-  - WL#11858, DevAPI: Core API v1 alignment.
-
-  - Fix for Bug#27652379, NPE FROM GETSESSION(PROPERTIES) WHEN HOST PARAMETER IS GIVEN IN SMALL LETTER.
-
-  - Fix for BUG#87600 (26724154), CONNECTOR THROWS 'MALFORMED DATABASE URL' ON NON MYSQL CONNECTION-URLS.
-
-  - Fix for BUG#26089880, GETCONNECTION("MYSQLX://..") RETURNS NON-X PROTOCOL CONNECTION.
-
-  - WL#11876, Improve connection properties design.
-
-  - WL#11933, Connector/J 8.0 X DevAPI reference documentation update.
-
-  - WL#11860, Ensure >= 75% code coverage.
-
-  - Fix for Bug#90753 (27977617), WAIT_TIMEOUT EXCEEDED MESSAGE NOT TRIGGERED.
-
-  - Fix for Bug#85941 (25924324), WASNULL NOT SET AFTER GETBYTES IS CALLED.
-
-  - Fix for Bug#28066709, COLLECTION.CREATEINDEX() TEST IS BROKEN AFTER WL#11808 IMPLEMENTATION.
-
-  - Fix for Bug#90872 (28027459), FILTERPARAMS CLASS IS NOT NEEDED.
-
-  - Fix for Bug#27522054, POSSIBLE ASYNC XPROTOCOL MESSAGE HANDLING PERF ISSUE.
-    The "xdevapi.useAsyncProtocol" connection property default value is changed to "false".
-
-Version 8.0.11
-
-  - WL#11293, DevAPI: Support new locking modes : NOWAIT and SKIP LOCKED.
-
-  - Fix for Bug#90029 (27678308), FAILURE WHEN GETTING GEOMCOLLECTION COLUMN TYPE.
-
   - Fix for BUG#90024 (27677574), SOME TESTS FAILED AGAINST MYSQL 8.0.5 BECAUSE OF DEPRECATED FEATURES REMOVAL.
+
+Version 5.1.46
+
+  - WL#11629, Change caching_sha2_password padding.
 
   - Fix for Bug#86741 (26314325), Multi-Host connection with autocommit=0 getAutoCommit maybe wrong.
 
@@ -134,56 +34,15 @@ Version 8.0.11
 
   - Fix for Bug#26819691, SETTING PACKETDEBUGBUFFERSIZE=0 RESULTS IN CONNECTION FAILURE.
 
+  - WL#11200, Add caching_sha2_password support.
+
   - Fix for Bug#88227 (27029657), Connector/J 5.1.44 cannot be used against MySQL 5.7.20 without warnings.
 
   - Fix for Bug#27374581, CONNECTION FAILS WHEN GPL SERVER STARTED WITH TLS-VERSION=TLSV1.2.
 
-  - WL#11419, DevAPI: New document _id generation support.
-
-  - WL#11620, Change caching_sha2_password padding.
-
-  - WL#11604, DevAPI: Add SHA256_MEMORY support.
-
-  - Fix for BUG#86278 (26092824), SUPPORT CUSTOM CONSTRUCTION OF SSLSOCKET DURING CONNECTION ESTABLISHMENT.
-
-  - Fix for BUG#27226293, JSONNUMBER.GETINTEGER() & NUMBERFORMATEXCEPTION.
-
-  - WL#10527, Clean up Protocol and Session interfaces.
-
-Version 8.0.10
-
-  - (Skipped version number to align versions between components and server)
-
-Version 8.0.9
-
-  - WL#11469, Update license header in GPL packages.
-
-  - Fix for BUG#27247349, WL#11208 : UNIQUE DOES NOT GIVE ERROR EVEN THOUGH IT IS NOT SUPPORTED.
-
-  - WL#11208, DevAPI: Collection.createIndex.
-
-  - WL#10156, Add setters/getters for connection properties to MysqlDataSource, MysqlXADataSource and MysqlConnectionPoolDataSource.
-
-  - WL#11401, DevAPI: Remove configuration API.
-    Partial revert of "WL#9868, DevAPI: Configuration handling interface."
-
-  - WL#10619, Ensure compatibility with new data dictionary.
-
-  - Fix for BUG#27217264, WL#10937: NULL POINTER EXCEPTION WHEN NULL IS PASSED AS _ID IN COLL.REPLACEONE.
-
-  - WL#10937, DevAPI: ReplaceOne, AddOrReplaceOne, GetOne, RemoveOne.
-
-  - Fix for Bug#26723646, JSON_MERGE() FUNCTION IS DEPRECATED IN MYSQL 8.0.
-
-  - Fix for Bug#27185332, WL#11210:ERROR IS THROWN WHEN NESTED EMPTY DOCUMENTS ARE INSERTED TO COLLECTION.
-
-  - Fix for Bug#27151601, WL#11210: DOCUMENT PATCH EXPRESSIONS ARE NOT SUPPORTED.
-
-  - WL#11210, DevAPI: Modify/MergePatch.
-
   - Fix for Bug#79612 (22362474), CONNECTION ATTRIBUTES LOST WHEN CONNECTING WITHOUT DEFAULT DATABASE.
 
-  - WL#10152, Enable TLSv1.2 on mysqlx.
+Version 5.1.45
 
   - Fix for Bug#27131768, NULL POINTER EXCEPTION IN CONNECTION.
 
@@ -196,57 +55,13 @@ Version 8.0.9
 
   - Fix for Bug#26724085, CHARSET MAPPING TO BE UPDATED FOR MYSQL 8.0.3.
 
+  - Fix for Bug#26794652, TEST FAILING DUE TO BINARY LOGGING ENABLED BY DEFAULT IN MYSQL 8.0.3.
+
+  - Fix for Bug#26794602, TESTS FAILING DUE TO CHANGE IN INFORMATION_SCHEMA.INNODB_SYS_* NAMING.
+
   - Fix for Bug#87704 (26771560), THE STREAM GETS THE RESULT SET ?THE DRIVER SIDE GET WRONG ABOUT GETLONG().
 
-  - Fix for Bug#24924097, SERVER GREETING ERROR ISN'T RECOGNIZED DURING HANDSHAKE.
-
-  - Fix for Bug#26748909, MASTER : ERROR - NO OPERATIONS ALLOWED AFTER STATEMENT CLOSED FOR TOSTRING().
-
-  - Fix for Bug#26266731, CONCUR_UPDATABLE RESULTSET OPERATIONS FAIL AGAINST 8.0 FOR BOOLEAN COLUMN.
-
-  - WL#11239, DevAPI: Remove create table implementation.
-
-  - Fix for Bug#27131100, WL#11212 : SAVEPOINT CREATING WITH EMPTY STRING AND SPACE AS NAME.
-
-  - WL#11212, DevAPI: transaction save-points.
-
-  - WL#11060, Support new SHA-256 authentication system.
-
-  - Fix for Bug#87826 (26846249), MYSQL JDBC CONNECTOR/J DATABASEMETADATA NULL PATTERN HANDLING IS NON-COMPLIANT.
-
-  - WL#11163, Extract parameter setters, serverPrepare() and serverExecute() to core classes.
-
-  - Fix for BUG#26995710, WL#11161 : NULL POINTER EXCEPTION IN EXECUTEBATCH() AND CLOSE().
-
-  - WL#11161, Unify query bindings.
-
-  - WL#8469, Don't extract query text from packets when possible.
-
-Version 8.0.8
-
-  - Fix for BUG#26722030, TEST FAILING DUE TO BINARY LOGGING ENABLED BY DEFAULT IN MYSQL 8.0.3.
-
-  - Fix for BUG#26722018, TESTS FAILING DUE TO CHANGE IN INFORMATION_SCHEMA.INNODB_SYS_* NAMING.
-
-  - Fix for BUG#26750807, MASTER : NULL POINTER EXCEPTION IN SCHEMA.DROPVIEW(NULL).
-
-  - Fix for BUG#26750705, MASTER : ERROR - UNSUPPORTED CONVERSION FROM TIME TO JAVA.SQL.DATE.
-
-  - WL#10620, DevAPI: SHA256 Authentication support.
-
-  - WL#10936, DevAPI: Row locking for Crud.Find.
-
-  - WL#9868, DevAPI: Configuration handling interface.
-
-  - WL#10935, DevAPI: Array or Object "contains" operator.
-
-  - WL#9875, Prepare c/J 8.0 for DEB and RPM builds.
-
-  - Fix for BUG#26259384, CALLABLE STATEMENT GIVES ERROR IN C/JAVA WHEN RUN AGAINST MYSQL 8.0.
-
-  - Fix for Bug#26393132, NULLPOINTEREXCEPTION IS THROWN WHEN TRIED TO DROP A NULL COLLECTION.
-
-  - WL#10532, DevAPI: Cleanup Drop APIs.
+Version 5.1.44
 
   - Fix for Bug#87429 (26633984), repeated close of ServerPreparedStatement causes memory leak.
     Thanks to Eduard Gurskiy for his contribution.
@@ -258,6 +73,12 @@ Version 8.0.8
 
   - Fix for Bug#87153 (26501245), INCORRECT RESULT OF DBMD.GETVERSIONCOLUMNS() AGAINST MYSQL 8.0.2+.
 
+  - Fix for Bug#26440544, CONNECTOR/J SHOULD NOT USE TX_{READ_ONLY,ISOLATION} WHICH IS PLANNED FOR REMOVAL.
+
+Version 5.1.43
+
+  - Fix for Bug#26399958, UNABLE TO CONNECT TO MYSQL 8.0.3.
+
   - Fix for Bug#78313 (21931572), proxies not handling Object.equals(Object) calls correctly.
 
   - Fix for Bug#85885 (25874048), resultSetConcurrency and resultSetType are swapped in call to prepareStatement.
@@ -266,34 +87,18 @@ Version 8.0.8
 
   - WL#10536, Deprecating COM_SHUTDOWN.
 
+  - Fix for Bug#25650305, GETDATE(),GETTIME() AND GETTIMESTAMP() CALL WITH NULL CALENDAR RETURNS NPE.
+
+  - Fix for Bug#26239946, C/J 5.1 GIS TESTS ARE FAILING WITH MYSQL 8.0.1.
+
+  - Fix for Bug#26090721, CONNECTION FAILING WHEN SERVER STARTED WITH COLLATION UTF8MB4_DE_PB_0900_AI_CI.
+
   - Fix for Bug#25946965, UPDATE THE TIME ZONE MAPPINGS WITH LATEST TZ DATABASES.
 
   - Fix for Bug#20182108, INCLUDE CUSTOM LOAD BALANCING STRATEGY USING PLUGIN API.
     New load-balancing strategy "serverAffinity" and new connection property "serverAffinityOrder" added.
 
-  - Fix for Bug#26440544, CONNECTOR/J SHOULD NOT USE TX_{READ_ONLY,ISOLATION} WHICH IS PLANNED FOR REMOVAL.
-
-  - Fix for Bug#26399958, UNABLE TO CONNECT TO MYSQL 8.0.3.
-
-  - Fix for Bug#25650305, GETDATE(),GETTIME() AND GETTIMESTAMP() CALL WITH NULL CALENDAR RETURNS NPE.
-
-Version 8.0.7
-
-  - Fix for Bug#26227653, WL#10528 DIFF BEHAVIOUR WHEN SYSTEM PROP JAVAX.NET.SSL.TRUSTSTORETYPE IS SET.
-
-  - WL#10528, DevAPI: Ensure all connectors are secure by default.
-
-  - WL#8305, Remove internal dependency on connection objects.
-
-  - Fix for Bug#22972057, X DEVAPI: CLIENT HANGS AFTER CONNECTION FAILURE.
-
-  - Fix for Bug#26140577, GIS TESTS ARE FAILING WITH MYSQL 8.0.1.
-
-  - WL#10765, DevAPI: Forbid modify() and remove() with no condition.
-
-  - Fix for Bug#26090721, CONNECTION FAILING WHEN SERVER STARTED WITH COLLATION UTF8MB4_DE_PB_0900_AI_CI.
-
-  - WL#10781, enum-based connection properties.
+Version 5.1.42
 
   - Fix for Bug#73775 (19531384), DBMD.getProcedureColumns()/.getFunctionColumns() fail to filter by columnPattern.
 
@@ -307,41 +112,28 @@ Version 8.0.7
 
   - Fix for Bug#66430 (16714868), setCatalog on connection leaves ServerPreparedStatement cache for old catalog.
 
+  - Fix for Bug#83662 (25048406), NullPointerException while reading NULL boolean value from DB.
+
+  - Fix for Bug#83368 (24841670), 5.1.40 regression: wasNull not updated when calling getInt for a bit column.
+
+  - Added static mapping for utf8mb4_ja_0900_as_cs collation.
+
+  - Fix for Bug#84189 (25250938), Allow null when extracting java.time.* classes from ResultSet.
+    Thanks to Martin Desharnais for his contribution.
+
   - Fix for Bug#70808 (17757070), Set sessionVariables in a single query.
 
   - Fix for Bug#77192 (21170603), Description for the Property replicationConnetionGroup Missing from the Manual.
 
   - Fix for Bug#83834 (25101890), Typo in Connector/J error message.
 
-  - WL#10531, Support utf8mb4 as default charset.
-
-  - Fix for Bug#85555 (25757019), useConfigs Can't find configuration template named, in mysql-connector-java 6.x
-
-  - WL#10529, Move version number to 8.0.
-
-  - WL#10530, DevAPI: Remove XSession, rename NodeSession to Session.
-
-  - Fix for Bug#23510958, CONCURRENT ASYNC OPERATIONS RESULT IN HANG.
-
-  - Fix for Bug#23597281, GETNODESESSION() CALL WITH SSL PARAMETERS RETURNS CJCOMMUNICATIONSEXCEPTION.
-
-  - Fix for Bug#25207784, C/J DOESN'T FOLLOW THE FINAL X DEVAPI MY-193 SPECIFICATION.
-
-  - Fix for Bug#25494338, ENABLEDSSLCIPHERSUITES PARAMETER NOT WORKING AS EXPECTED WITH X-PLUGIN.
-
-  - Fix for Bug#84084 (25215008), JAVA.LANG.ARRAYINDEXOUTOFBOUNDSEXCEPTION ON ATTEMPT TO GET VALUE FROM RESULTSET.
-
-  - WL#10553, Add mapping for Japanese utf8mb4 collation.
-
-  - Fix for Bug#25575103, NPE FROM CREATETABLE() WHEN SOME OF THE INPUTS ARE NULL.
-
-  - Fix for Bug#25575156, NPE FROM CREATEVIEW() WHEN SOME OF THE INPUTS ARE NULL.
-
   - Fix for Bug#25636947, CONNECTION USING MYSQL CLIENT FAILS IF WE USE THE SSL CERTIFICATES FROM C/J SRC.
 
   - Fix for Bug#25687718, INCORRECT TIME ZONE IDENTIFIER IN STATEMENTREGRESSIONTEST.
 
   - Fix for Bug#25556597, RESULTSETTEST.TESTPADDING UNIT TEST IS FAILING IN 5.1.41 RELEASE PACKAGE.
+
+02-28-17 - Version 5.1.41
 
   - Fix for Bug#25517837, CONNECT PERFORMNACE DEGRADED BY 10% IN 5.1.41.
 
@@ -356,65 +148,47 @@ Version 8.0.7
 
   - Fix for Bug#81706 (23535001), NullPointerException in driver.
 
+  - Fix for Bug#81108 (23264511), FabricMySQLConnectionProxy.setShardTable method logic miss.
+
   - Fix for Bug#83052 (25048543), static method in com.mysql.jdbc.Util relies on null object.
+
+  - Fix for Bug#82203 (24289730), com.mysql.fabric.HashShardMapping is not thread safe.
+
+  - Updated collations map.
 
   - Fix for Bug#69526 (17035755), 'Abandoned connection cleanup thread' at mysql-connector-java-5.1.25.
 
   - Fix for Bug#82826 (24942672), Unneeded version requirement for javax.net.ssl Import-Package on OSGi MANIFEST.MF.
 
-Version 6.0.6
-
-  - Added Core TLS/SSL options for the mysqlx URI scheme.
-
-  - Updated collations map.
-
-  - Fix for Bug#24350526, UNEXPECTED BEHAVIOUR OF IS_NUMBER_SIGNED API IN C/JAVA.
-
-  - Fix for Bug#82707 (24512766), WRONG MILLI SECOND VALUE RETURNED FROM TIMESTAMP COLUMN.
-
-  - Fix for Bug#82005 (23702040), JDBCDATEVALUEFACTORY FAILS TO PARSE SOME DATES.
-
-  - Fix for Bug#83725 (25056803), NPE IN XPROTOCOL.GETPLUGINVERSION() WITH MYSQL 5.7.17.
-
-  - Fix for Bug#24525461, UPDATABLE RESULTSET FEATURE FAILS WHEN USESERVERPREPSTMTS=TRUE.
-
-  - Fix for Bug#24527173, QUERY EXECUTION USING PREPARED STMT FAILS WHEN USECURSORFETCH=TRUE.
-
-  - Fix for Bug#82964 (24658016), JSR-310 DATA TYPES CREATED THROUGH JAVA.SQL TYPES.
-
-  - Fix for Bug#81202 (23188159), RESULTSETIMPL.GETOBJECT THROWS NULLPOINTEREXCEPTION WHEN FIELD IS NULL.
-
-  - Fix for Bug#22931277, COLUMN.GETTYPE() RETURNS ERROR FOR VALID DATATYPES.
-
-  - Fix for BUG#24471057, UPDATE FAILS WHEN THE NEW VALUE IS OF TYPE DBDOC WHICH HAS ARRAY IN IT.
-
-  - Fix for Bug#81691 (23519211), GETLASTDOCUMENTIDS() DOESN'T REPORT IDS PROVIDED BY USER.
-
-  - Fix for Bug#82826 (24942672), Unneeded version requirement for javax.net.ssl Import-Package on OSGi MANIFEST.MF.
-
-10-21-16 - Version 6.0.5
-
-  - Fix for BUG#82896 (24613062), Unexpected behavior on attempt to connect to JDBC driver with unsupported URL.
-
-  - Added client-side failover during XSession initialization for multi-router configuration.
-
-  - Removed Extension interface. All extension classes now implement their specific interfaces.
-
-  - Fix for Bug#22988922, GETLENGTH() RETURNS -1 FOR LONGBLOB AND LONGTEXT FIELDS.
+09-30-16 - Version 5.1.40
 
   - Fix for Bug#24619829, NEW FAILURES IN C/JAVA UNITTESTS AGAINST MYSQL 8.0.
 
   - Fix for Bug#75209 (20212882), Set useLocalTransactionState may result in partially committed transaction.
 
+  - Fix for Bug#23197238, EXECUTEQUERY() FAILS FOR JSON DATA WHEN RESULTSETCONCURRENCY=CONCUR_UPDATABLE.
+
   - Fix for Bug#48346 (11756431), Communications link failure when reading compressed data with compressed=true.
     Thanks to Ryosuke Yamazaki for his contribution.
+
+  - Fix for Bug#74711 (19974685), FORGOTTEN WORKAROUND FOR BUG#36326.
 
   - Fix for Bug#80631 (22891845), ResultSet.getString return garbled result with json type data.
     Thanks to Dong SongLing for his contribution.
 
   - Fix for Bug#64188 (13702433), MysqlXAConnection.MYSQL_ERROR_CODES_TO_XA_ERROR_CODES is missing XA error codes.
 
+  - Fix for Bug#81072 (23103408), FabricMySQLConnectionProxy method nativeSQL does nothing.
+
+  - Fix for Bug#81056 (23103406), Connector/J with Fabric always returns lower_case_table_names false.
+
+  - Fix for Bug#77649 (21389278), URL start with word "address",JDBC can't parse the "host:port" Correctly.
+
   - Fix for Bug#72632 (18759269), NullPointerException for invalid JDBC URL.
+
+  - Fix for Bug#22750465, CONNECTOR/J HANGS WHEN FABRIC NODE IS DOWN.
+
+  - Fix for Bug#82094 (23738636), ConcurrentModificationException on Fabric connections after topology changes.
 
   - Fix for Bug#82115 (23743956), Some exceptions are intercepted twice or fail to set the init cause.
 
@@ -422,32 +196,7 @@ Version 6.0.6
 
   - Fix for Bug#80615 (22954007), prepared statement leak when rewriteBatchedStatements=true and useServerPrepStmt.
 
-  - Extended X DevAPI with flexible parameter lists.
-  
-  - Added a virtual NodeSession to X DevAPI. 
-
-09-05-16 - Version 6.0.4
-
-  - X DevAPI URL prefix changed from "mysql:x:" to "mysqlx:".
-
-  - Fix for Bug#24301468 X DEVAPI SSL CONNECTION FAILS ON WINDOWS
-
-  - The X DevAPI Table object now represents both database tables and views.
-
-  - Added support for matching against pattern for X DevAPI list_objects calls.
-    Added Schema.getCollections(String pattern) and Schema.getTables(String pattern) interface methods.
-
-  - Switched to "mysqlx" namespace for X DevAPI StmtExecute messages. This change is incompatible to MySQL server versions < 5.7.14.
-
-  - Fix for Bug#82046 (23743947), MYSQL CONNECTOR JAVA OSGI METADATA BROKEN.
-
-  - Fix for Bug#21690043, CONNECT FAILS WHEN PASSWORD IS BLANK.
-
-  - Fix for Bug#22931433, GETTING VALUE OF BIT COLUMN RESULTS IN EXCEPTION.
-
-06-17-16 - Version 6.0.3
-
-  - Fix for Bug#23535571, EXCESSIVE MEMORY USAGE WHEN ENABLEPACKETDEBUG=TRUE.
+04-29-16 - Version 5.1.39
 
   - Fix for Bug#23212347, ALL API CALLS ON RESULTSET METADATA RESULTS IN NPE WHEN USESERVERPREPSTMTS=TRUE.
 
@@ -466,26 +215,15 @@ Version 6.0.6
 
   - Fix for Bug#22730682, ARRAYINDEXOUTOFBOUNDSEXCEPTION FROM CONNECTIONGROUPMANAGER.REMOVEHOST().
 
+  - Fix for Bug#56479 (16738378), getTimestamp throws exception.
+
+  - Fix for Bug#79598 (22352812), Client side Prepared Statement caching bypasses JDBC42 Java 8 Time conversion.
+
   - Fix for Bug#77171 (21181466), On every connect getting sql_mode from server creates unnecessary exception.
 
   - Fix for Bug#79343 (22353759), NPE in TimeUtil.loadTimeZoneMappings causing server time zone value unrecognized.
 
-  - Fix for Bug#22038729, X DevAPI: Any API call after a failed CALL PROC() results in hang
-
-  - Remove Schema.drop(), Collection.drop() and replaced with X DevAPI's session.dropSchema() and session.dropCollection().
-    Also added session.dropTable().
-
-  - Fix for Bug#22932078, GETTIMESTAMP() RETURNS WRONG VALUE FOR FRACTIONAL PART
-
-  - Extracted packet readers from MysqlaProtocol.
-
-  - Fix for Bug#22972057, X protocol CLIENT HANGS AFTER CONNECTION FAILURE
-
-  - Fix for Bug#23044312, NullPointerException in X protocol AsyncMessageReader due to race condition
-
-  - Returned support for MySQL 5.5 and 5.6.
-
-04-05-16 - Version 6.0.2
+  - Fix for Bug#80522 (22833410), Using useCursorFetch leads to data corruption in Connector/J for TIME type.
 
   - Deprecate the EOF packet.
 
@@ -495,7 +233,7 @@ Version 6.0.6
 
   - Fix for Bug#22598938, FABRICMYSQLDATASOURCE.GETCONNECTION() NPE AFTER SWITCHOVER.
 
-  - Merged version 5.1.38.
+11-30-15 - Version 5.1.38
 
   - Fix for Bug#21286268, CONNECTOR/J REPLICATION USE MASTER IF SLAVE IS UNAVAILABLE.
 
@@ -518,27 +256,9 @@ Version 6.0.6
   - Fix for Bug#21934573, FABRIC CODE INVOLVED IN THREAD DEADLOCK.
     Duplicate: Bug#78710 (21966391), Deadlock on ReplicationConnection and ReplicationConnectionGroup when failover.
 
-  - Merged version 5.1.37.
+10-15-15 - Version 5.1.37
 
   - Fix for Bug#21876798, CONNECTOR/J WITH MYSQL FABRIC AND SPRING PRODUCES PROXY ERROR.
-
-10-19-15 - Version 6.0.1
-
-  - Removed useJvmCharsetConverters connection property. JVM charset converters are now used in all cases.
-
-  - Refactored value decoding and removed all date/time connection properties
-
-  - Refactored connection properties
-
-  - Assume existence of INFORMATION_SCHEMA.PARAMETERS (and thus MySQL 5.5) when preparing stored procedure calls.
-
-  - Removed retainStatementAfterResultSetClose connection property.
-
-  - Null-merge of Bug#54095 (11761585) fix.
-
-  - Removed support code for MySQL server versions < 5.7.
-
-  - Merged version 5.1.37.
 
   - Fix for Bug#76859 (20969312), DBMD getColumns using I_S doesn't have column IS_GENERATEDCOLUMN as per JDBC 4.1.
     Added support for GENERATED COLUMNS.
@@ -578,7 +298,7 @@ Version 6.0.6
 
   - Fix for Bug#76187 (20675539), getTypeInfo report maximum precision of 255 for varchar.
 
-  - Merged version 5.1.36.
+06-30-15 - Version 5.1.36
 
   - Add test for new syntax 'ALTER TABLE ... DISCARD|IMPORT PARTITION ...' introduced in MySQL 5.7.4.
 
@@ -614,7 +334,7 @@ Version 6.0.6
 
   - Fix for Bug#77217 (21184949), ClassCastException when executing a streaming PreparedStatement with Fabric
 
-  - Merged version 5.1.35.
+03-23-15 - Version 5.1.35
 
   - Fix for Bug#19536760, GETSTRING() CALL AFTER RS.RELATIVE() RETURNS NULLPOINTEREXCEPTION
 
@@ -657,7 +377,7 @@ Version 6.0.6
 
   - Fix for Bug#74998 (20112694), readRemainingMultiPackets not computed correctly for rows larger than 16 MB.
 
-  - Merged version 5.1.34.
+11-03-14 - Version 5.1.34
 
   - Fix for Bug#73012 (19219158), Precedence between timezone options is unclear.
 
@@ -669,7 +389,7 @@ Version 6.0.6
 
   - Fix for Bug#19383371, CONNECT USING MYSQL_OLD_PASSWORD USER FAILS WHEN PWD IS BLANK
 
-  - Merged version 5.1.33.
+09-29-14 - Version 5.1.33
 
   - Fix for Bug#17441747, C/J DOESN'T SUPPORT XA RECOVER OUTPUT FORMAT CHANGED IN MYSQL 5.7.
     Test case was disabled for affected server versions 5.7.0 - 5.7.4.
@@ -698,7 +418,7 @@ Version 6.0.6
 
   - Fix for Bug#19172037, TEST FAILURES WHEN RUNNING AGAINST 5.6.20 SERVER VERSION
 
-  - Merged version 5.1.32
+08-04-14 - Version 5.1.32
 
   - Fix for Bug#71923 (18344403), Incorrect generated keys if ON DUPLICATE KEY UPDATE not exact.
     Additionally several methods in StringUtils were fixed/upgraded.
