@@ -1,2 +1,3 @@
 # mysql-osgi
-MySQL Connector/J OSGI Bundle
+MySQL Connector/J Packaged in standard OSGI Bundle.
+
