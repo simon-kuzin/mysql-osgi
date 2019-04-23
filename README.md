@@ -1,4 +1,6 @@
 # mysql-osgi
 MySQL Connector/J Packaged in standard OSGI Bundle.
 
-You may download latest jar [from here](https://github.com/simon-kuzin/mysql-osgi/releases/latest/com.mysql.cj.osgi_8.0.15.201904230118.jar)
+You can download bundle for latest My SQL Connector [from here](https://github.com/simon-kuzin/mysql-osgi/releases/latest/)
+
+For for older versions look into [other releases](https://github.com/simon-kuzin/mysql-osgi/releases)
